@@ -39,11 +39,11 @@ const CookingTime = () => {
     <div className="text-[var(--text)] lg:text-sm text-base flex flex-col">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`${isOpen ? "bg-[var(--badge-btn-hover)]" : null} cursor-pointer hover:bg-[var(--badge-btn-hover)] flex flex-row items-center justify-between py-3 lg:py-1 px-4`}
+        className={`${isOpen ? "bg-[var(--badge-btn-hover)]" : null} cursor-pointer hover:bg-[var(--badge-btn-hover)] flex flex-row items-center justify-between py-3 lg:py-1 2xl:py-3 px-4`}
       >
         <div className="text-[var(--text)] flex flex-row items-center gap-4">
-          <PiTimerBold className="h-7 lg:h-6 w-auto transition-colors duration-150" />
-          <span className="transition-colors duration-150">Cooking Time</span>
+          <PiTimerBold className="h-7 2xl:h-9 lg:h-6 w-auto transition-colors duration-150" />
+          <span className="transition-colors duration-150 2xl:text-xl">Cooking Time</span>
           {cookingTime.length ? (
             <div className="h-3 w-3 rounded-full bg-red-500"></div>
           ) : null}
@@ -69,7 +69,7 @@ const CookingTime = () => {
               <label
                 className={`${
                   cookingTime[0] === option ? "bg-[var(--badge-btn)]" : null
-                } cursor-pointer px-2 py-1 border-[1px] border-[var(--outline)] rounded-md`}
+                } cursor-pointer 2xl:text-lg px-2 py-1 border-[1px] border-[var(--outline)] rounded-md`}
                 htmlFor={option}
                 key={option}
               >

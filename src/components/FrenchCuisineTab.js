@@ -21,8 +21,8 @@ const FrenchCuisineTab = () => {
   if(isError) {
     return (
       <div className="w-[80%] mx-auto mt-8 font-dm-sans">
-        <h1 className="text-[var(--text)] transition-colors duration-150 w-full mx-auto text-[26px]">Latest French Recipes</h1>
-        <div className="text-2xl text-[var(--text)] transition-colors duration-150 font-semibold w-full flex flex-row justify-center items-center h-[200px]">
+        <h1 className="text-[var(--text)] 2xl:text-4xl transition-colors duration-150 w-full mx-auto text-[26px]">Latest French Recipes</h1>
+        <div className="text-2xl text-[var(--text)] transition-colors 2xl:text-4xl duration-150 font-semibold w-full flex flex-row justify-center items-center h-[200px] 2xl:h-[300px]">
           {error.message}
         </div>
       </div>
@@ -31,9 +31,9 @@ const FrenchCuisineTab = () => {
 
   return (
     <div className="w-full lg:w-[80%] mx-auto mt-8 font-dm-sans">
-      <h1 className="text-[var(--text)] transition-colors duration-150 w-full mx-auto text-[26px]">Latest French Recipes</h1>
+      <h1 className="text-[var(--text)] 2xl:text-4xl transition-colors duration-150 w-full mx-auto text-[26px]">Latest French Recipes</h1>
       <div className="snap-x w-full mx-auto overflow-x-scroll overflow-y-hidden scrollbar">
-        <ul className="min-w-[610%] lg:min-w-[200%] grid grid-cols-cuisineCard grid-flow-col gap-2 mt-4 whitespace-nowrap pb-4">
+        <ul className="min-w-[calc(600%+2.5rem)] lg:min-w-[200%] grid grid-cols-cuisineCard 2xl:gap-4 grid-flow-col gap-2 mt-4 whitespace-nowrap pb-4">
           {!isLoading
             ? twelveCuisineCardsData.map((mealCard, index) => {
                 return (
@@ -61,3 +61,6 @@ const FrenchCuisineTab = () => {
 };
 
 export default FrenchCuisineTab;
+
+
+// 2 + gap + 2 + gap + 2 + gap + 2 + gap + 2 + gap + 2

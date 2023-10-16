@@ -63,29 +63,29 @@ const Filter = ({
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               exit={{ scaleX: 0 }}
-              className="origin-right font-dm-sans lg:text-sm text-base scrollbar-hide border-r-[1px] border-r-[var(--outline)] fixed lg:fixed z-40 lg:top-16 pb-[180px] left-0 top-0 w-full lg:w-[300px] h-full bg-[var(--primary-bg)] transition-colors duration-150 overflow-y-auto"
+              className="origin-right font-dm-sans lg:text-sm text-base scrollbar-hide border-r-[1px] border-r-[var(--outline)] fixed lg:fixed z-40 lg:top-16 2xl:top-32 pb-[180px] left-0 top-0 w-full lg:w-[300px] 2xl:w-[400px] h-full bg-[var(--primary-bg)] transition-colors duration-150 overflow-y-auto"
             >
               <div className="flex flex-row items-center justify-between px-4 lg:py-1 py-6">
                 <div className="text-[var(--text)] transition-colors duration-150 flex flex-row gap-2 items-center">
-                  <MdFilterList className="h-6 w-auto" />
-                  <h1>Filters</h1>
-                  <div className="text-white rounded-full bg-red-500 h-6 w-6 text-xs flex flex-row justify-center items-center">
+                  <MdFilterList className="h-6 2xl:h-8 w-auto" />
+                  <h1 className="2xl:text-3xl">Filters</h1>
+                  <div className="text-white rounded-full bg-red-500 h-6 w-6 2xl:h-8 2xl:w-8 2xl:text-lg text-xs flex flex-row justify-center items-center">
                     {filterNumber}
                   </div>
                 </div>
                 <button
                   onClick={() => setFilterOpen(false)}
-                  className="md:hidden h-8 w-8 hover:bg-[var(--badge-btn-hover)] text-[var(--text)] transition-colors duration-150 rounded-full flex flex-row justify-center items-center"
+                  className="md:hidden h-8 w-8 2xl:h-10 2xl:w-10 hover:bg-[var(--badge-btn-hover)] text-[var(--text)] transition-colors duration-150 rounded-full flex flex-row justify-center items-center"
                 >
-                  <AiOutlineClose className="h-5 w-auto transition-colors duration-150" />
+                  <AiOutlineClose className="h-5 2xl:h-7 w-auto transition-colors duration-150" />
                 </button>
               </div>
               <div className="w-full px-4 my-2">
                 <div className="relative w-full mx-auto flex flex-row justify-center">
                   <label
-                    className={`text-[var(--text)] absolute transition-all duration-150 bg-[var(--primary-bg)] lg:text-sm text-base left-4 ${
+                    className={`text-[var(--text)] absolute transition-all duration-150 bg-[var(--primary-bg)] lg:text-sm 2xl:text-lg text-base left-4 ${
                       isInputFocused || inputValue
-                        ? "-top-3 text-sm z-40 px-[2px] text-orange-600"
+                        ? "-top-3 text-sm 2xl:text-base z-40 px-[2px] text-orange-600"
                         : "top-1/2 -translate-y-1/2"
                     }`}
                     htmlFor="searchRecipe"
@@ -94,7 +94,7 @@ const Filter = ({
                   </label>
                   <input
                     onKeyDown={(e) => handleKeyPress(e, applyRef)}
-                    className={`bg-[var(--primary-bg)] caret-[var(--text)] text-[var(--text)] w-full transition-colors duration-150 lg:h-10 h-14 px-2 outline-none rounded-md ${
+                    className={`bg-[var(--primary-bg)] caret-[var(--text)] text-[var(--text)] w-full transition-colors duration-150 lg:h-10 h-14 2xl:h-14 2xl:text-xl px-2 outline-none rounded-md ${
                       isInputFocused || inputValue
                         ? "border-2 border-orange-600"
                         : "border-2 border-[var(--outline)]"
@@ -122,18 +122,18 @@ const Filter = ({
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               exit={{ scaleX: 0 }}
-              className="origin-right font-dm-sans w-full lg:w-[300px] h-[100px] lg:h-[70px] border-r-[1px] border-r-[var(--outline)] bg-[var(--primary-bg)] transition-colors duration-150 flex flex-row gap-3 justify-center items-center fixed z-50 bottom-0 left-0"
+              className="origin-right font-dm-sans w-full lg:w-[300px] 2xl:w-[400px] 2xl:h-[120px] h-[100px] lg:h-[70px] border-r-[1px] border-r-[var(--outline)] bg-[var(--primary-bg)] transition-colors duration-150 flex flex-row gap-3 justify-center items-center fixed z-50 bottom-0 left-0"
             >
               <button
                 title="Clear all filters"
                 onClick={handleClearFilters}
-                className="rounded-md px-14 lg:px-10 py-2 text-[var(--text)] bg-[var(--primary-container)] hover:bg-[var(--badge-btn-hover)] transition-colors duration-150"
+                className="rounded-md px-14 lg:px-10 py-2 2xl:text-2xl text-[var(--text)] bg-[var(--primary-container)] hover:bg-[var(--badge-btn-hover)] transition-colors duration-150"
               >
                 Clear
               </button>
               <button
                 ref={applyRef}
-                className={`text-white transition-colors duration-150 rounded-md px-14 lg:px-10 py-2  ${
+                className={`text-white 2xl:text-2xl transition-colors duration-150 rounded-md px-14 lg:px-10 py-2  ${
                   applyDisabled
                     ? "bg-gray-300"
                     : "bg-[var(--orange)] hover:bg-[var(--orange-hover)]"

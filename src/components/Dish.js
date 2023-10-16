@@ -33,11 +33,11 @@ const Dish = () => {
     <div className="text-[var(--text)] lg:text-sm text-base flex flex-col">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`${isOpen ? "bg-[var(--badge-btn-hover)]" : null} cursor-pointer hover:bg-[var(--badge-btn-hover)] flex flex-row items-center justify-between py-3 lg:py-1 px-4`}
+        className={`${isOpen ? "bg-[var(--badge-btn-hover)]" : null} cursor-pointer hover:bg-[var(--badge-btn-hover)] flex flex-row items-center justify-between py-3 lg:py-1 2xl:py-3 px-4`}
       >
         <div className="flex flex-row items-center gap-4">
-          <BiDish className="h-7 lg:h-6 w-auto transition-colors duration-150" />
-          <span className="transition-colors duration-150">Dish</span>
+          <BiDish className="h-7 lg:h-6 2xl:h-9 w-auto transition-colors duration-150" />
+          <span className="transition-colors duration-150 2xl:text-xl">Dish</span>
           {dish.length ? (
             <div className="h-3 w-3 rounded-full bg-red-500"></div>
           ) : null}
@@ -63,7 +63,7 @@ const Dish = () => {
                 <label
                   className={`${
                     dish.includes(option) ? "bg-[var(--badge-btn)]" : null
-                  } cursor-pointer px-2 py-1 border-[1px] border-[var(--outline)] rounded-md`}
+                  } cursor-pointer 2xl:text-lg px-2 py-1 border-[1px] border-[var(--outline)] rounded-md`}
                   htmlFor={option}
                   key={option}
                 >

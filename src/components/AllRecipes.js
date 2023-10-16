@@ -127,7 +127,6 @@ const AllRecipes = () => {
 
   const {
     data,
-    isLoading,
     isFetching,
     refetch,
     fetchNextPage,
@@ -149,7 +148,7 @@ const AllRecipes = () => {
   if (isError) {
     return (
       <div className="mt-56 font-dm-sans">
-        <h1 className="text-[var(--text)] text-center w-full text-3xl font-semibold">
+        <h1 className="text-[var(--text)] text-center w-full text-3xl font-semibold 2xl:text-5xl">
           {error.message}
         </h1>
       </div>
@@ -157,7 +156,7 @@ const AllRecipes = () => {
   }
 
   return (
-    <div className="mt-20 font-dm-sans">
+    <div className="mt-20 2xl:mt-32 font-dm-sans">
       <Filter
         filterOpen={filterOpen}
         setFilterOpen={setFilterOpen}
@@ -166,9 +165,9 @@ const AllRecipes = () => {
         refetch={refetch}
         filterNumber={filterNumber}
       />
-      <div className="w-full h-full lg:pl-[300px] pl-0  flex flex-col ">
+      <div className="w-full h-full lg:pl-[300px] 2xl:pl-[416px] 2xl:pr-4 pl-0  flex flex-col ">
         <div className="flex flex-row justify-between items-center">
-          <h1 className="text-[var(--text)] text-3xl">All Recipes</h1>
+          <h1 className="text-[var(--text)] text-3xl 2xl:text-5xl">All Recipes</h1>
           <button
             onClick={() => setFilterOpen(true)}
             className="bg-[var(--primary-container)] text-[var(--text)] transition-colors duration-150 flex flex-row gap-3 items-center rounded-md px-4 py-2 lg:hidden"
@@ -178,7 +177,7 @@ const AllRecipes = () => {
           </button>
         </div>
         <ScrollFilterButton setFilterOpen={setFilterOpen} />
-        <ul className=" w-full grid grid-cols-card gap-2 mt-4">
+        <ul className=" w-full grid grid-cols-card 2xl:grid-cols-cardBig gap-2 2xl:gap-4 mt-4">
           {data?.pages[0].data.count !== 0 &&
             data?.pages.map((group, i) => {
               return (
@@ -201,7 +200,7 @@ const AllRecipes = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate= {{ opacity: 1, transition: { duration: 1 } }}
-                className="text-[var(--text)] w-full lg:w-[400px] h-40 text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto text-3xl font-semibold"
+                className="text-[var(--text)] w-full lg:w-[400px] 2xl:w-[450px] h-40 text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto text-3xl 2xl:text-5xl font-semibold"
               >
                 <h1>No recipe found. Try applying the filters.</h1>
               </motion.div>

@@ -39,7 +39,7 @@ const MealTabs = () => {
                   e.preventDefault();
                   setSelectedMeal(e.target.textContent);
                 }}
-                className={`text-[var(--text)] py-2 hover:bg-[var(--badge-btn-hover)] transition-color duration-150 border-b-2 grow ${
+                className={`text-[var(--text)] text-sm 2xl:text-2xl lg:text-[16px] py-2 hover:bg-[var(--badge-btn-hover)] transition-color duration-150 border-b-2 grow ${
                   selectedMeal === meal ? "border-b-orange-600" : null
                 }`}
               >
@@ -48,8 +48,8 @@ const MealTabs = () => {
             );
           })}
         </div>
-        <div className="text-2xl font-semibold w-[80%] mx-auto h-[200px] flex flex-row justify-center items-center mt-4">
-          <div className="text-[var(--text)]">{error.message}</div>
+        <div className="text-2xl font-semibold w-[80%] mx-auto h-[200px] 2xl:h-[300px] flex flex-row justify-center items-center mt-4">
+          <div className="text-[var(--text)] 2xl:text-4xl">{error.message}</div>
         </div>
         <Link className="mx-auto" to={`/${selectedMeal}`}>
           <button
@@ -78,7 +78,7 @@ const MealTabs = () => {
                 e.preventDefault();
                 setSelectedMeal(e.target.textContent);
               }}
-              className={`text-[var(--text)] text-sm lg:text-[16px] transition-color duration-150 py-2 hover:bg-[var(--badge-btn-hover)] border-b-2 grow ${
+              className={`text-[var(--text)] text-sm 2xl:text-2xl lg:text-[16px] transition-color duration-150 py-2 hover:bg-[var(--badge-btn-hover)] border-b-2 grow ${
                 selectedMeal === meal ? "border-b-orange-600" : null
               }`}
             >
@@ -87,7 +87,7 @@ const MealTabs = () => {
           );
         })}
       </div>
-      <ul className="lg:w-[80%] w-full mx-auto grid grid-cols-card gap-2 mt-4">
+      <ul className="lg:w-[80%] w-full mx-auto grid grid-cols-card 2xl:grid-cols-cardBig gap-2 2xl:gap-4 mt-4">
         {!isLoading
           ? twelveTabCardsData.map((mealCard, index) => {
               return (
@@ -110,7 +110,7 @@ const MealTabs = () => {
             setPageSelected("Recipes");
             setMeal([selectedMeal]);
           }}
-          className="w-full lg:w-48 py-2 bg-[var(--primary-container)] hover:bg-[var(--badge-btn-hover)] transition-color duration-150 text-[var(--text)]  rounded-full "
+          className="w-full lg:w-48 2xl:w-72 2xl:text-2xl py-2 bg-[var(--primary-container)] hover:bg-[var(--badge-btn-hover)] transition-color duration-150 text-[var(--text)]  rounded-full "
         >
           Show more
         </button>

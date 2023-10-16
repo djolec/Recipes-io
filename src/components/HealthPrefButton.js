@@ -12,7 +12,7 @@ const HealthPrefButton = ({ pref }) => {
       handleClearFilters()
       setHealth([pref])
       setPageSelected("Recipes")
-    }} className='font-dm-sans py-2 px-4 bg-[var(--badge-btn)] text-[var(--text)] hover:bg-[var(--badge-btn-hover)] transition-colors duration-300 rounded-full text-sm'><Link to={`/${pref}`} className='h-full w-full'>{pref}</Link></button>
+    }} className='font-dm-sans py-2 px-4 bg-[var(--badge-btn)] text-[var(--text)] hover:bg-[var(--badge-btn-hover)] 2xl:text-2xl transition-colors duration-300 rounded-full text-sm'><Link to={`/${pref}`} className='h-full w-full'>{pref}</Link></button>
   )
 }
 

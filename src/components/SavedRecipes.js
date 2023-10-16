@@ -12,9 +12,9 @@ const SavedRecipes = () => {
   });
 
   return (
-    <div className="font-dm-sans text-[var(--text)] transition-colors duration-150 mt-20">
+    <div className="font-dm-sans text-[var(--text)] transition-colors duration-150 mt-20 2xl:mt-32">
       {recipesSaved.length ? (
-        <ul className="w-full lg:w-[80%] mx-auto grid grid-cols-card gap-2 mt-4">
+        <ul className="w-full lg:w-[80%] 2xl:w-[90%] mx-auto grid grid-cols-card 2xl:grid-cols-cardBig gap-2 2xl:gap-4 mt-4">
           <AnimatePresence>
             {recipesSaved.map((recipe, index) => {
               return (

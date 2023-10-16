@@ -98,7 +98,7 @@ const MealTabCard = ({ recipeInfo, animKey, finalKey, exit }) => {
             ""
           )}`}
         >
-          <h1 className="px-1 hover:text-orange-500 cursor-pointer transition-colors duration-150 whitespace-normal font-semibold before:content-[''] before:absolute before:inset-0">
+          <h1 className="px-1 hover:text-orange-500 2xl:text-xl cursor-pointer transition-colors duration-150 whitespace-normal font-semibold before:content-[''] before:absolute before:inset-0">
             {recipeInfo.recipe.label.length > 30
               ? `${recipeInfo.recipe.label.slice(0, 30)}...`
               : recipeInfo.recipe.label}
@@ -107,8 +107,8 @@ const MealTabCard = ({ recipeInfo, animKey, finalKey, exit }) => {
       </div>
       <div className="flex flex-row justify-between items-center px-1">
         <p className="flex flex-row justify-start gap-1 items-center">
-          <MdAccessTime className="pt-[1px] h-5 w-auto transition-colors duration-150" />
-          <span className="text-sm transition-colors duration-150">
+          <MdAccessTime className="pt-[1px] h-5 w-auto 2xl:h-7 transition-colors duration-150" />
+          <span className="text-sm 2xl:text-base transition-colors duration-150">
             {formatTime(recipeInfo.recipe.totalTime)}
           </span>
         </p>
@@ -128,7 +128,7 @@ const MealTabCard = ({ recipeInfo, animKey, finalKey, exit }) => {
                 animate={{ scale: 1, transition: { duration: 0.2 } }}
                 exit={{ scale: 0, transition: { duration: 0 } }}
               >
-                <MdOutlineBookmarkAdd className=" h-5 w-auto" />
+                <MdOutlineBookmarkAdd className="2xl:h-7 h-5 w-auto" />
               </motion.div>
             )}
           </AnimatePresence>
@@ -144,7 +144,7 @@ const MealTabCard = ({ recipeInfo, animKey, finalKey, exit }) => {
                 animate={{ scale: 1, transition: { duration: 0.2 } }}
                 exit={{ scale: 0, transition: { duration: 0 } }}
               >
-                <MdOutlineBookmark className="h-5 w-auto" />
+                <MdOutlineBookmark className="2xl:h-7 h-5 w-auto" />
               </motion.div>
             )}
           </AnimatePresence>

@@ -46,11 +46,11 @@ const HealthPreferences = () => {
 
   return (
     <div className="w-full lg:w-[80%] mx-auto mt-8 flex flex-col gap-6">
-      <div className="w-[80%] lg:w-[50%] mx-auto flex flex-col gap-1">
-        <h1 className="text-[var(--text)] font-dm-serif-display text-[26px] lg:text-3xl font-semibold text-center">
+      <div className="w-[80%] lg:w-[50%] 2xl:w-[60%] mx-auto flex flex-col gap-1">
+        <h1 className="text-[var(--text)] 2xl:text-6xl font-dm-serif-display text-[26px] lg:text-3xl font-semibold text-center">
           Choose Your Health Preference
         </h1>
-        <p className="text-[var(--text)] text-center text-xs lg:text-sm font-dm-sans">
+        <p className="text-[var(--text)] 2xl:w-[80%] 2xl:mx-auto 2xl:text-2xl text-center text-xs lg:text-sm font-dm-sans">
           Choosing your health preference is an important step towards achieving
           a healthier lifestyle.
         </p>
