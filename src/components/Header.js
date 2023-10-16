@@ -15,8 +15,12 @@ const Header = () => {
     <header className="font-dm-sans fixed h-16 w-full bg-[var(--primary-bg)] transition-color duration-150 z-10 flex flex-row justify-between items-center px-4 lg:px-8 border-b-[1px] border-b-[var(--outline)]">
       <Link to={"/"} className=" lg:w-56 w-40">
         <div>
-          {darkMode && <LogoDark className="cursor-pointer w-36 lg:w-40 h-auto" />}
-          {!darkMode && <LogoLight className="cursor-pointer w-36 lg:w-40 h-auto" />}
+          {darkMode && (
+            <LogoDark className="cursor-pointer w-36 lg:w-40 h-auto" />
+          )}
+          {!darkMode && (
+            <LogoLight className="cursor-pointer w-36 lg:w-40 h-auto" />
+          )}
         </div>
       </Link>
       <div className="w-48 h-full hidden lg:flex flex-row justify-center">

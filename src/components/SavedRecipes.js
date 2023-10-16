@@ -8,7 +8,7 @@ const SavedRecipes = () => {
   const { recipesSaved, setPageSelected } = useContext(AppContext);
 
   useEffect(() => {
-    setPageSelected("");
+    setPageSelected("Saved");
   });
 
   return (
