@@ -1,0 +1,23 @@
+[data-theme="light"] {
+    --primary-bg: hsl(0, 0%, 96%);
+    --primary-container: hsl(14, 57%, 95%);
+    --text: hsl(0, 3%, 13%);
+    --badge-btn: hsl(30, 58%, 88%);
+    --badge-btn-hover: hsla(0, 0%, 0%, 0.1);
+    --orange: hsl(11, 87%, 59%);
+    --orange-hover: hsl(11, 60%, 50%);
+    --outline: hsl(10, 19%, 88%);
+    --topbtn: hsla(0, 0%, 100%, 0.68);
+  }
+  
+  [data-theme="dark"] {
+    --primary-bg: hsl(0, 0%, 10%);
+    --primary-container: hsl(15, 3%, 15%);
+    --text: hsl(11, 3%, 87%);
+    --badge-btn: hsl(30, 28%, 13%);
+    --badge-btn-hover: hsla(0, 0%, 100%, 0.1);
+    --orange: hsl(11, 87%, 64%);
+    --orange-hover: hsl(11, 51%, 51%);
+    --outline: hsl(11, 3%, 20%);
+    --topbtn: hsla(208, 23%, 22%, 0.653);
+  }
