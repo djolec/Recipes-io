@@ -4,7 +4,7 @@ import { HiOutlineBookmarkAlt } from "react-icons/hi";
 import { LiaHamburgerSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import App, { AppContext } from "../App";
+import { AppContext } from "../App";
 
 const MobileNav = () => {
   const { handleClearFilters, setDiet, pageSelected } = useContext(AppContext);

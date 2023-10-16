@@ -1,12 +1,11 @@
 import React, { Fragment, useEffect } from "react";
-import { useState, createContext } from "react";
+import { useState } from "react";
 import { MdFilterList } from "react-icons/md";
 import Filter from "./Filter";
 import MealTabCard from "./MealTabCard";
 import SkeletonMain from "./SkeletonMain";
 import ScrollFilterButton from "./ScrollFilterButton";
 import { useFilteredRecipes } from "../Hooks/useFetchRecipes";
-import { useParams } from "react-router-dom";
 import { AppContext } from "../App";
 import { useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,12 +26,9 @@ const AllRecipes = () => {
     ingredients,
     calories,
     dish,
-    handleClearFilters,
   } = useContext(AppContext);
 
   const numArr = Array.from({ length: 20 }, (_, index) => index + 1);
-
-  const { id } = useParams();
 
   const handleScroll = () => {
     const bottom =

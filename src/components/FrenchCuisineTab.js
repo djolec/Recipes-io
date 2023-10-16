@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import MealTabCard from "./MealTabCard";
 import SkeletonMain from "./SkeletonMain";
 import { useFetchCuisine } from "../Hooks/useFetchRecipes";
 import { Link } from "react-router-dom";
 import { AppContext } from "../App";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const FrenchCuisineTab = () => {
   const { setCuisine, setPageSelected, handleClearFilters } = useContext(AppContext);

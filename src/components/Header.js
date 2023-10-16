@@ -8,7 +8,7 @@ import { AppContext } from "../App";
 import { useContext } from "react";
 
 const Header = () => {
-  const { setDiet, pageSelected, handleClearFilters, darkMode, setDarkMode } =
+  const { setDiet, pageSelected, darkMode, setDarkMode } =
     useContext(AppContext);
 
   return (

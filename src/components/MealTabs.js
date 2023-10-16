@@ -1,6 +1,6 @@
 import React from "react";
 import MealTabCard from "./MealTabCard";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../App";
 import { useContext } from "react";

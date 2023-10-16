@@ -8,7 +8,6 @@ import Footer from "./components/Footer";
 import MobileNav from "./components/MobileNav";
 import { useState, createContext, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 export const AppContext = createContext();
 
@@ -172,7 +171,6 @@ function App() {
             <Route path="/recipe/:id" element={<RecipeDetails />} />
             <Route path="/savedRecipes" element={<SavedRecipes />} />
           </Routes>
-          <ReactQueryDevtools initialIsOfpen={false} />
         </main>
         <Footer />
         <MobileNav />
