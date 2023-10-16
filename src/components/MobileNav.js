@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { AppContext } from "../App";
 
 const MobileNav = () => {
-  const { handleClearFilters, setDiet, pageSelected } = useContext(AppContext);
+  const { pageSelected } = useContext(AppContext);
 
   return (
     <div className="text-[var(--text)] transition-colors duration-150 border-t-[1px] border-t-[var(--outline)] z-10 h-24 w-full lg:hidden fixed bottom-0 bg-[var(--primary-container)] flex flex-row justify-between items-center px-8">
