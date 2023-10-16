@@ -13,10 +13,6 @@ const MobileNav = () => {
     <div className="text-[var(--text)] transition-colors duration-150 border-t-[1px] border-t-[var(--outline)] z-10 h-24 w-full lg:hidden fixed bottom-0 bg-[var(--primary-container)] flex flex-row justify-between items-center px-8">
       <Link to={"/Balanced"}>
         <button
-          onClick={() => {
-            handleClearFilters();
-            setDiet(["Balanced"]);
-          }}
           className="flex flex-col justify-center items-center py-1 px-3"
         >
           <div

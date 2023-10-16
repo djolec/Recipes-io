@@ -61,6 +61,3 @@ const FrenchCuisineTab = () => {
 };
 
 export default FrenchCuisineTab;
-
-
-// 2 + gap + 2 + gap + 2 + gap + 2 + gap + 2 + gap + 2
