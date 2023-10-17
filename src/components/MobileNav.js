@@ -10,13 +10,11 @@ const MobileNav = () => {
   const { pageSelected } = useContext(AppContext);
 
   return (
-    <div className="text-[var(--text)] transition-colors duration-150 border-t-[1px] border-t-[var(--outline)] z-10 h-24 w-full lg:hidden fixed bottom-0 bg-[var(--primary-container)] flex flex-row justify-between items-center px-8">
+    <div className="fixed bottom-0 z-10 flex h-24 w-full flex-row items-center justify-between border-t-[1px] border-t-[var(--outline)] bg-[var(--primary-container)] px-8 text-[var(--text)] transition-colors duration-150 lg:hidden">
       <Link to={"/Balanced"}>
-        <button
-          className="flex flex-col justify-center items-center py-1 px-3"
-        >
+        <button className="flex flex-col items-center justify-center px-3 py-1">
           <div
-            className={`flex flex-row justify-center items-center h-10 w-auto py-2 px-4 rounded-2xl ${
+            className={`flex h-10 w-auto flex-row items-center justify-center rounded-2xl px-4 py-2 ${
               pageSelected === "Recipes" ? "bg-[var(--badge-btn-hover)]" : null
             }`}
           >
@@ -26,9 +24,9 @@ const MobileNav = () => {
         </button>
       </Link>
       <Link to={"/"}>
-        <button className="flex flex-col justify-center items-center">
+        <button className="flex flex-col items-center justify-center">
           <div
-            className={`flex flex-row justify-center items-center h-10 w-auto py-2 px-4 rounded-2xl ${
+            className={`flex h-10 w-auto flex-row items-center justify-center rounded-2xl px-4 py-2 ${
               pageSelected === "Home" ? "bg-[var(--badge-btn-hover)]" : null
             }`}
           >
@@ -38,9 +36,9 @@ const MobileNav = () => {
         </button>
       </Link>
       <Link to={"/savedRecipes"}>
-        <button className="flex flex-col justify-center items-center">
+        <button className="flex flex-col items-center justify-center">
           <div
-            className={`flex flex-row justify-center items-center h-10 w-auto py-2 px-4 rounded-2xl ${
+            className={`flex h-10 w-auto flex-row items-center justify-center rounded-2xl px-4 py-2 ${
               pageSelected === "Saved" ? "bg-[var(--badge-btn-hover)]" : null
             }`}
           >

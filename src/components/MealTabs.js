@@ -29,8 +29,8 @@ const MealTabs = () => {
 
   if (isError) {
     return (
-      <div className="w-full flex flex-col gap-4">
-        <div className="w-[80%] flex flex-row mx-auto">
+      <div className="flex w-full flex-col gap-4">
+        <div className="mx-auto flex w-[80%] flex-row">
           {meals.map((meal) => {
             return (
               <button
@@ -39,7 +39,7 @@ const MealTabs = () => {
                   e.preventDefault();
                   setSelectedMeal(e.target.textContent);
                 }}
-                className={`text-[var(--text)] text-sm 2xl:text-2xl lg:text-[16px] py-2 hover:bg-[var(--badge-btn-hover)] transition-color duration-150 border-b-2 grow ${
+                className={`transition-color grow border-b-2 py-2 text-sm text-[var(--text)] duration-150 hover:bg-[var(--badge-btn-hover)] lg:text-[16px] 2xl:text-2xl ${
                   selectedMeal === meal ? "border-b-orange-600" : null
                 }`}
               >
@@ -48,7 +48,7 @@ const MealTabs = () => {
             );
           })}
         </div>
-        <div className="text-2xl font-semibold w-[80%] mx-auto h-[200px] 2xl:h-[300px] flex flex-row justify-center items-center mt-4">
+        <div className="mx-auto mt-4 flex h-[200px] w-[80%] flex-row items-center justify-center text-2xl font-semibold 2xl:h-[300px]">
           <div className="text-[var(--text)] 2xl:text-4xl">{error.message}</div>
         </div>
         <Link className="mx-auto" to={`/${selectedMeal}`}>
@@ -58,7 +58,7 @@ const MealTabs = () => {
               setPageSelected("Recipes");
               setMeal([selectedMeal]);
             }}
-            className="w-48 py-2 bg-[var(--primary-container)] hover:bg-[var(--badge-btn-hover)] transition-color duration-150 text-[var(--text)] rounded-full "
+            className="transition-color w-48 rounded-full bg-[var(--primary-container)] py-2 text-[var(--text)] duration-150 hover:bg-[var(--badge-btn-hover)] "
           >
             Show more
           </button>
@@ -68,8 +68,8 @@ const MealTabs = () => {
   }
 
   return (
-    <div className="w-full flex flex-col gap-4 font-dm-sans">
-      <div className="w-full lg:w-[80%] flex flex-row mx-auto">
+    <div className="flex w-full flex-col gap-4 font-dm-sans">
+      <div className="mx-auto flex w-full flex-row lg:w-[80%]">
         {meals.map((meal) => {
           return (
             <button
@@ -78,7 +78,7 @@ const MealTabs = () => {
                 e.preventDefault();
                 setSelectedMeal(e.target.textContent);
               }}
-              className={`text-[var(--text)] text-sm 2xl:text-2xl lg:text-[16px] transition-color duration-150 py-2 hover:bg-[var(--badge-btn-hover)] border-b-2 grow ${
+              className={`transition-color grow border-b-2 py-2 text-sm text-[var(--text)] duration-150 hover:bg-[var(--badge-btn-hover)] lg:text-[16px] 2xl:text-2xl ${
                 selectedMeal === meal ? "border-b-orange-600" : null
               }`}
             >
@@ -87,7 +87,7 @@ const MealTabs = () => {
           );
         })}
       </div>
-      <ul className="lg:w-[80%] w-full mx-auto grid grid-cols-card 2xl:grid-cols-cardBig gap-2 2xl:gap-4 mt-4">
+      <ul className="mx-auto mt-4 grid w-full grid-cols-card gap-2 lg:w-[80%] 2xl:grid-cols-cardBig 2xl:gap-4">
         {!isLoading
           ? twelveTabCardsData.map((mealCard, index) => {
               return (
@@ -110,7 +110,7 @@ const MealTabs = () => {
             setPageSelected("Recipes");
             setMeal([selectedMeal]);
           }}
-          className="w-full lg:w-48 2xl:w-72 2xl:text-2xl py-2 bg-[var(--primary-container)] hover:bg-[var(--badge-btn-hover)] transition-color duration-150 text-[var(--text)]  rounded-full "
+          className="transition-color w-full rounded-full bg-[var(--primary-container)] py-2 text-[var(--text)] duration-150 hover:bg-[var(--badge-btn-hover)] lg:w-48 2xl:w-72  2xl:text-2xl "
         >
           Show more
         </button>

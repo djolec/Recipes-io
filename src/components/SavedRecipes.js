@@ -12,9 +12,9 @@ const SavedRecipes = () => {
   });
 
   return (
-    <div className="font-dm-sans text-[var(--text)] transition-colors duration-150 mt-20 2xl:mt-32">
+    <div className="mt-20 font-dm-sans text-[var(--text)] transition-colors duration-150 2xl:mt-32">
       {recipesSaved.length ? (
-        <ul className="w-full lg:w-[80%] 2xl:w-[90%] mx-auto grid grid-cols-card 2xl:grid-cols-cardBig gap-2 2xl:gap-4 mt-4">
+        <ul className="mx-auto mt-4 grid w-full grid-cols-card gap-2 lg:w-[80%] 2xl:w-[90%] 2xl:grid-cols-cardBig 2xl:gap-4">
           <AnimatePresence>
             {recipesSaved.map((recipe, index) => {
               return (
@@ -38,9 +38,11 @@ const SavedRecipes = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 2 } }}
-            className="text-[var(--text)] transition-colors duration-150 mt-56 flex flex-row justify-center items-center"
+            className="mt-56 flex flex-row items-center justify-center text-[var(--text)] transition-colors duration-150"
           >
-            <h1 className="text-center text-3xl">You haven't saved any recipes.</h1>
+            <h1 className="text-center text-3xl">
+              You haven't saved any recipes.
+            </h1>
           </motion.div>
         </AnimatePresence>
       )}

@@ -7,12 +7,11 @@ import HealthPreferences from "./HealthPreferences";
 import { AppContext } from "../App";
 
 const HomePage = () => {
-
   const { setPageSelected } = useContext(AppContext);
 
   useEffect(() => {
-    setPageSelected("Home")
-  }, [])
+    setPageSelected("Home");
+  }, []);
 
   return (
     <>

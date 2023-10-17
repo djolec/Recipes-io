@@ -63,29 +63,29 @@ const Filter = ({
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               exit={{ scaleX: 0 }}
-              className="origin-right font-dm-sans lg:text-sm text-base scrollbar-hide border-r-[1px] border-r-[var(--outline)] fixed lg:fixed z-40 lg:top-16 2xl:top-32 pb-[180px] left-0 top-0 w-full lg:w-[300px] 2xl:w-[400px] h-full bg-[var(--primary-bg)] transition-colors duration-150 overflow-y-auto"
+              className="scrollbar-hide fixed left-0 top-0 z-40 h-full w-full origin-right overflow-y-auto border-r-[1px] border-r-[var(--outline)] bg-[var(--primary-bg)] pb-[180px] font-dm-sans text-base transition-colors duration-150 lg:fixed lg:top-16 lg:w-[300px] lg:text-sm 2xl:top-32 2xl:w-[400px]"
             >
-              <div className="flex flex-row items-center justify-between px-4 lg:py-1 py-6">
-                <div className="text-[var(--text)] transition-colors duration-150 flex flex-row gap-2 items-center">
-                  <MdFilterList className="h-6 2xl:h-8 w-auto" />
+              <div className="flex flex-row items-center justify-between px-4 py-6 lg:py-1">
+                <div className="flex flex-row items-center gap-2 text-[var(--text)] transition-colors duration-150">
+                  <MdFilterList className="h-6 w-auto 2xl:h-8" />
                   <h1 className="2xl:text-3xl">Filters</h1>
-                  <div className="text-white rounded-full bg-red-500 h-6 w-6 2xl:h-8 2xl:w-8 2xl:text-lg text-xs flex flex-row justify-center items-center">
+                  <div className="flex h-6 w-6 flex-row items-center justify-center rounded-full bg-red-500 text-xs text-white 2xl:h-8 2xl:w-8 2xl:text-lg">
                     {filterNumber}
                   </div>
                 </div>
                 <button
                   onClick={() => setFilterOpen(false)}
-                  className="md:hidden h-8 w-8 2xl:h-10 2xl:w-10 hover:bg-[var(--badge-btn-hover)] text-[var(--text)] transition-colors duration-150 rounded-full flex flex-row justify-center items-center"
+                  className="flex h-8 w-8 flex-row items-center justify-center rounded-full text-[var(--text)] transition-colors duration-150 hover:bg-[var(--badge-btn-hover)] md:hidden 2xl:h-10 2xl:w-10"
                 >
-                  <AiOutlineClose className="h-5 2xl:h-7 w-auto transition-colors duration-150" />
+                  <AiOutlineClose className="h-5 w-auto transition-colors duration-150 2xl:h-7" />
                 </button>
               </div>
-              <div className="w-full px-4 my-2">
-                <div className="relative w-full mx-auto flex flex-row justify-center">
+              <div className="my-2 w-full px-4">
+                <div className="relative mx-auto flex w-full flex-row justify-center">
                   <label
-                    className={`text-[var(--text)] absolute transition-all duration-150 bg-[var(--primary-bg)] lg:text-sm 2xl:text-lg text-base left-4 ${
+                    className={`absolute left-4 bg-[var(--primary-bg)] text-base text-[var(--text)] transition-all duration-150 lg:text-sm 2xl:text-lg ${
                       isInputFocused || inputValue
-                        ? "-top-3 text-sm 2xl:text-base z-40 px-[2px] text-orange-600"
+                        ? "-top-3 z-40 px-[2px] text-sm text-orange-600 2xl:text-base"
                         : "top-1/2 -translate-y-1/2"
                     }`}
                     htmlFor="searchRecipe"
@@ -94,14 +94,14 @@ const Filter = ({
                   </label>
                   <input
                     onKeyDown={(e) => handleKeyPress(e, applyRef)}
-                    className={`bg-[var(--primary-bg)] caret-[var(--text)] text-[var(--text)] w-full transition-colors duration-150 lg:h-10 h-14 2xl:h-14 2xl:text-xl px-2 outline-none rounded-md ${
+                    className={`h-14 w-full rounded-md bg-[var(--primary-bg)] px-2 text-[var(--text)] caret-[var(--text)] outline-none transition-colors duration-150 lg:h-10 2xl:h-14 2xl:text-xl ${
                       isInputFocused || inputValue
                         ? "border-2 border-orange-600"
                         : "border-2 border-[var(--outline)]"
                     }`}
                     autoComplete="off"
                     value={inputValue}
-                    type="search"
+                    type="text"
                     id="searchRecipe"
                     onFocus={handleInputFocus}
                     onBlur={handleInputBlur}
@@ -122,18 +122,18 @@ const Filter = ({
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               exit={{ scaleX: 0 }}
-              className="origin-right font-dm-sans w-full lg:w-[300px] 2xl:w-[400px] 2xl:h-[120px] h-[100px] lg:h-[70px] border-r-[1px] border-r-[var(--outline)] bg-[var(--primary-bg)] transition-colors duration-150 flex flex-row gap-3 justify-center items-center fixed z-50 bottom-0 left-0"
+              className="fixed bottom-0 left-0 z-50 flex h-[100px] w-full origin-right flex-row items-center justify-center gap-3 border-r-[1px] border-r-[var(--outline)] bg-[var(--primary-bg)] font-dm-sans transition-colors duration-150 lg:h-[70px] lg:w-[300px] 2xl:h-[120px] 2xl:w-[400px]"
             >
               <button
                 title="Clear all filters"
                 onClick={handleClearFilters}
-                className="rounded-md px-14 lg:px-10 py-2 2xl:text-2xl text-[var(--text)] bg-[var(--primary-container)] hover:bg-[var(--badge-btn-hover)] transition-colors duration-150"
+                className="rounded-md bg-[var(--primary-container)] px-14 py-2 text-[var(--text)] transition-colors duration-150 hover:bg-[var(--badge-btn-hover)] lg:px-10 2xl:text-2xl"
               >
                 Clear
               </button>
               <button
                 ref={applyRef}
-                className={`text-white 2xl:text-2xl transition-colors duration-150 rounded-md px-14 lg:px-10 py-2  ${
+                className={`rounded-md px-14 py-2 text-white transition-colors duration-150 lg:px-10 2xl:text-2xl  ${
                   applyDisabled
                     ? "bg-gray-300"
                     : "bg-[var(--orange)] hover:bg-[var(--orange-hover)]"
@@ -144,8 +144,8 @@ const Filter = ({
                   queryClient.removeQueries(["filtered"]);
                   refetch();
                   handleScrollToTop();
-                  if(isMobileView) {
-                    setFilterOpen(false)
+                  if (isMobileView) {
+                    setFilterOpen(false);
                   }
                 }}
               >

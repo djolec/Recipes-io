@@ -7,21 +7,20 @@ import { ReactComponent as Edamam } from "../img/edamam.svg";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-
-  const { darkMode } = useContext(AppContext)
+  const { darkMode } = useContext(AppContext);
 
   return (
-    <div className="bg-[var(--primary-bg)] transition-colors duration-150 w-full py-6 px-8 mb-[94px] lg:mb-0 border-t-[1px] border-t-[var(--outline)] 2xl:h-28 flex flex-col lg:flex-row justify-between items-center">
-      <h3 className="text-[var(--text)] 2xl:text-xl text-center w-52 lg:text-left">Copyright&copy; DC</h3>
-      <Link className="hidden lg:block w-36 lg:w-40 2xl:w-52" to={"/"}>
-      {darkMode && (
-            <LogoDark className="cursor-pointer w-full h-auto" />
-          )}
-          {!darkMode && (
-            <LogoLight className="cursor-pointer w-full h-auto" />
-          )}
+    <div className="mb-[94px] flex w-full flex-col items-center justify-between border-t-[1px] border-t-[var(--outline)] bg-[var(--primary-bg)] px-8 py-6 transition-colors duration-150 lg:mb-0 lg:flex-row 2xl:h-28">
+      <h3 className="w-52 text-center text-[var(--text)] lg:text-left 2xl:text-xl">
+        Copyright&copy; DC
+      </h3>
+      <Link className="hidden w-36 lg:block lg:w-40 2xl:w-52" to={"/"}>
+        {darkMode && <LogoDark className="h-auto w-full cursor-pointer" />}
+        {!darkMode && <LogoLight className="h-auto w-full cursor-pointer" />}
       </Link>
-      <Edamam className="cursor-pointer w-52 2xl:h-24" />
+      <a href="https://www.edamam.com/" target="_blank">
+        <Edamam className="w-52 cursor-pointer 2xl:h-24" />
+      </a>
     </div>
   );
 };

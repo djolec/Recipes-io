@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'DM Serif Display';
+  font-family: "DM Serif Display";
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/DMSerifDisplay-Regular.ttf') format('ttf');
+  src: url("./fonts/DMSerifDisplay-Regular.ttf") format("ttf");
 }
 
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/DMSans-Medium.ttf') format('ttf');
+  src: url("./fonts/DMSans-Medium.ttf") format("ttf");
 }
 
 @layer utilities {
@@ -23,7 +23,7 @@
 
   .scrollbar::-webkit-scrollbar-track {
     border-radius: 100vh;
-    background: var(--primary-container)
+    background: var(--primary-container);
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
@@ -38,6 +38,5 @@
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
 }
-}
-

@@ -14,9 +14,7 @@ const RecipeDetails = () => {
 
   const { id } = useParams();
 
-  const { data, refetch, error, isError } = useRecipeDetails(
-    `${base}${id}`
-  );
+  const { data, refetch, error, isError } = useRecipeDetails(`${base}${id}`);
 
   const singleRecipe = {
     recipeInfo: {
@@ -53,22 +51,22 @@ const RecipeDetails = () => {
     } else {
       localStorage.setItem(
         "saved",
-        JSON.stringify([...recipesSaved, singleRecipe])
+        JSON.stringify([...recipesSaved, singleRecipe]),
       );
       setRecipesSaved([...recipesSaved, singleRecipe]);
     }
   };
 
   useEffect(() => {
-    handleScrollToTop()
+    handleScrollToTop();
     setPageSelected("");
     refetch();
   }, []);
 
   if (isError) {
     return (
-      <div className="text-[var(--text)] mt-20 w-full h-full flex flex-row justify-center items-center gap-6">
-        <div className="text-2xl text-[var(--text)] transition-colors duration-150 font-semibold w-full flex flex-row justify-center items-center h-[200px]">
+      <div className="mt-20 flex h-full w-full flex-row items-center justify-center gap-6 text-[var(--text)]">
+        <div className="flex h-[200px] w-full flex-row items-center justify-center text-2xl font-semibold text-[var(--text)] transition-colors duration-150">
           {error.message}
         </div>
       </div>
@@ -79,20 +77,20 @@ const RecipeDetails = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 1 } }}
-      className="text-[var(--text)] mt-20 w-full h-full flex flex-col lg:flex-row justify-center gap-6 items-start"
+      className="mt-20 flex h-full w-full flex-col items-start justify-center gap-6 text-[var(--text)] lg:flex-row"
     >
-      <div className="w-full lg:w-[32%] h-auto bg-tab-card-img bg-no-repeat rounded-md overflow-hidden bg-35% bg-gray-300 bg-center aspect-square">
+      <div className="aspect-square h-auto w-full overflow-hidden rounded-md bg-gray-300 bg-tab-card-img bg-35% bg-center bg-no-repeat lg:w-[32%]">
         <img
           loading="lazy"
-          className="w-full h-full aspect-square"
+          className="aspect-square h-full w-full"
           src={data?.data.recipe.images.REGULAR.url}
           alt=""
         />
       </div>
-      <div className="w-full lg:w-[45%] flex flex-col gap-4">
-        <div className="flex flex-row justify-between items-start">
+      <div className="flex w-full flex-col gap-4 lg:w-[45%]">
+        <div className="flex flex-row items-start justify-between">
           <div className="max-w-[65%] lg:max-w-[70%]">
-            <h1 className="text-2xl lg:text-3xl font-semibold">
+            <h1 className="text-2xl font-semibold lg:text-3xl">
               {data?.data.recipe.label}
             </h1>
             <span>
@@ -102,7 +100,7 @@ const RecipeDetails = () => {
           </div>
           <button
             onClick={handleSaveRecipe}
-            className="w-28 bg-[var(--primary-container)] hover:bg-[var(--badge-btn-hover)] mt-2 font-semibold py-1 flex flex-row gap-1 items-center justify-center"
+            className="mt-2 flex w-28 flex-row items-center justify-center gap-1 bg-[var(--primary-container)] py-1 font-semibold hover:bg-[var(--badge-btn-hover)]"
           >
             <AnimatePresence>
               {!recipesSaved.filter((recipe) => {
@@ -147,19 +145,19 @@ const RecipeDetails = () => {
           </button>
         </div>
         <div className="flex flex-row">
-          <div className="flex flex-col items-center justify-center grow py-6 border-r-[1px] border-[var(--outline)]">
+          <div className="flex grow flex-col items-center justify-center border-r-[1px] border-[var(--outline)] py-6">
             <span className="text-2xl font-semibold">
               {data?.data.recipe.ingredientLines.length}
             </span>
             <span className="text-xs">ingredients</span>
           </div>
-          <div className="flex flex-col items-center justify-center grow py-6 border-r-[1px] border-[var(--outline)]">
+          <div className="flex grow flex-col items-center justify-center border-r-[1px] border-[var(--outline)] py-6">
             <span className="text-2xl font-semibold">
               {data?.data.recipe.totalTime}
             </span>
             <span className="text-xs">minutes</span>
           </div>
-          <div className="flex flex-col items-center justify-center grow py-6">
+          <div className="flex grow flex-col items-center justify-center py-6">
             <span className="text-2xl font-semibold">
               {data?.data.recipe &&
               typeof data.data.recipe.calories === "number"
@@ -173,10 +171,10 @@ const RecipeDetails = () => {
           {data?.data.recipe.cuisineType.map((cuisine) => {
             return (
               <button
-                className="whitespace-nowrap px-4 border-[1px] border-[var(--outline)] cursor-default rounded-md"
+                className="cursor-default whitespace-nowrap rounded-md border-[1px] border-[var(--outline)] px-4"
                 key={cuisine}
               >{`${cuisine.charAt(0).toUpperCase()}${cuisine.slice(
-                1
+                1,
               )}`}</button>
             );
           })}
@@ -184,14 +182,14 @@ const RecipeDetails = () => {
             return (
               <button
                 key={label}
-                className="whitespace-nowrap px-4 border-[1px] border-[var(--outline)] cursor-default rounded-md"
+                className="cursor-default whitespace-nowrap rounded-md border-[1px] border-[var(--outline)] px-4"
               >
                 {label}
               </button>
             );
           })}
         </div>
-        <div className="flex flex-row justify-between items-end border-b-[1px] border-[var(--outline)] py-2">
+        <div className="flex flex-row items-end justify-between border-b-[1px] border-[var(--outline)] py-2">
           <h3 className="font-semibold">Ingredients</h3>
           <span className="text-xs font-semibold">
             for {data?.data.recipe.yield} servings
@@ -209,7 +207,7 @@ const RecipeDetails = () => {
         <p>
           Link to instructions:{" "}
           <a
-            className="underline font-semibold break-words"
+            className="break-words font-semibold underline"
             href={data?.data.recipe.url}
             target="_blank"
           >

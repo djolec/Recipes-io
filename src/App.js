@@ -13,7 +13,7 @@ export const AppContext = createContext();
 
 function App() {
   const [darkMode, setDarkMode] = useState(
-    JSON.parse(localStorage.getItem("isDark")) || null
+    JSON.parse(localStorage.getItem("isDark")) || null,
   );
 
   const handleScrollToTop = () => {
@@ -71,12 +71,12 @@ function App() {
       setDarkMode(JSON.parse(localStorage.getItem("isDark")));
     } else {
       const darkModeMediaQuery = window.matchMedia(
-        "(prefers-color-scheme: dark)"
+        "(prefers-color-scheme: dark)",
       );
       setDarkMode(darkModeMediaQuery.matches);
       localStorage.setItem(
         "isDark",
-        JSON.stringify(darkModeMediaQuery.matches)
+        JSON.stringify(darkModeMediaQuery.matches),
       );
 
       const handleDarkModeChange = (e) => {
@@ -161,10 +161,10 @@ function App() {
     >
       <div
         data-theme={darkMode ? "dark" : "light"}
-        className="App flex flex-col min-h-screen w-full"
+        className="App flex min-h-screen w-full flex-col"
       >
         <Header />
-        <main className="w-full p-4 flex-grow bg-[var(--primary-bg)] transition-color duration-150">
+        <main className="transition-color w-full flex-grow bg-[var(--primary-bg)] p-4 duration-150">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/:id" element={<AllRecipes />} />

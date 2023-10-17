@@ -11,32 +11,33 @@ const SearchRecipe = () => {
     setInputValue,
     setPageSelected,
     handleKeyPress,
-    handleClearExceptInput
+    handleClearExceptInput,
   } = useContext(AppContext);
 
   const searchRef = useRef();
 
   return (
-    <div className="lg:min-w-[50%] w-[90%] lg:w-auto relative">
+    <div className="relative w-[90%] lg:w-auto lg:min-w-[50%]">
       <input
-      value={inputValue}
+        value={inputValue}
         onKeyDown={(e) => handleKeyPress(e, searchRef)}
         onChange={(e) => setInputValue(e.target.value)}
-        className="bg-[var(--primary-container)] text-[var(--text)] transition-color duration-150 w-full h-12 2xl:h-16 rounded-md pl-12 2xl:pl-20 pr-24 text-xl 2xl:text-2xl outline-none caret-[var(--text)]"
+        className="transition-color h-12 w-full rounded-md bg-[var(--primary-container)] pl-12 pr-24 text-xl text-[var(--text)] caret-[var(--text)] outline-none duration-150 2xl:h-16 2xl:pl-20 2xl:text-2xl"
         type="text"
+        placeholder="Search recipe..."
       />
-      <GiKnifeFork className="text-[var(--text)] transition-color duration-150 p-2 w-auto h-full absolute top-0 left-0" />
+      <GiKnifeFork className="transition-color absolute left-0 top-0 h-full w-auto p-2 text-[var(--text)] duration-150" />
 
       <Link to={`/${inputValue}`}>
         <button
           ref={searchRef}
           onClick={() => {
-            handleClearExceptInput()
+            handleClearExceptInput();
             setPageSelected("Recipes");
           }}
-          className="rounded-md absolute top-1/2 right-1 bg-[var(--orange)] hover:bg-[var(--orange-hover)] transition-colors duration-150 px-7 2xl:px-9 h-10 2xl:h-14 -translate-y-1/2"
+          className="absolute right-1 top-1/2 h-10 -translate-y-1/2 rounded-md bg-[var(--orange)] px-7 transition-colors duration-150 hover:bg-[var(--orange-hover)] 2xl:h-14 2xl:px-9"
         >
-          <FaMagnifyingGlass className="fill-white h-6 w-auto" />
+          <FaMagnifyingGlass className="h-6 w-auto fill-white" />
         </button>
       </Link>
     </div>

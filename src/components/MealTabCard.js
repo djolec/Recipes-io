@@ -69,7 +69,7 @@ const MealTabCard = ({ recipeInfo, animKey, finalKey, exit }) => {
     } else {
       localStorage.setItem(
         "saved",
-        JSON.stringify([...savedRecipes, recipeObj])
+        JSON.stringify([...savedRecipes, recipeObj]),
       );
       setRecipesSaved([...savedRecipes, recipeObj]);
     }
@@ -77,17 +77,21 @@ const MealTabCard = ({ recipeInfo, animKey, finalKey, exit }) => {
 
   return (
     <motion.li
-      className="text-[var(--text)] relative rounded-md overflow-hidden flex flex-col justify-between gap-4"
+      className="relative flex flex-col justify-between gap-4 overflow-hidden rounded-md text-[var(--text)]"
       key={finalKey}
       initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0, transition: { duration: 0.25, delay: animKey * 0.15 } }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.25, delay: animKey * 0.15 },
+      }}
       exit={exit}
     >
       <div className="flex flex-col gap-2">
-        <div className="bg-tab-card-img bg-no-repeat rounded-md overflow-hidden bg-35% bg-gray-300 bg-center aspect-square">
+        <div className="aspect-square overflow-hidden rounded-md bg-gray-300 bg-tab-card-img bg-35% bg-center bg-no-repeat">
           <img
             loading="lazy"
-            className="w-full h-full aspect-square"
+            className="aspect-square h-full w-full"
             src={recipeInfo.recipe.image}
             alt=""
           />
@@ -95,26 +99,26 @@ const MealTabCard = ({ recipeInfo, animKey, finalKey, exit }) => {
         <Link
           to={`/recipe/${recipeInfo._links.self.href.replace(
             "https://api.edamam.com/api/recipes/v2/",
-            ""
+            "",
           )}`}
         >
-          <h1 className="px-1 hover:text-orange-500 2xl:text-xl cursor-pointer transition-colors duration-150 whitespace-normal font-semibold before:content-[''] before:absolute before:inset-0">
+          <h1 className="cursor-pointer whitespace-normal px-1 font-semibold transition-colors duration-150 before:absolute before:inset-0 before:content-[''] hover:text-orange-500 2xl:text-xl">
             {recipeInfo.recipe.label.length > 30
               ? `${recipeInfo.recipe.label.slice(0, 30)}...`
               : recipeInfo.recipe.label}
           </h1>
         </Link>
       </div>
-      <div className="flex flex-row justify-between items-center px-1">
-        <p className="flex flex-row justify-start gap-1 items-center">
-          <MdAccessTime className="pt-[1px] h-5 w-auto 2xl:h-7 transition-colors duration-150" />
-          <span className="text-sm 2xl:text-base transition-colors duration-150">
+      <div className="flex flex-row items-center justify-between px-1">
+        <p className="flex flex-row items-center justify-start gap-1">
+          <MdAccessTime className="h-5 w-auto pt-[1px] transition-colors duration-150 2xl:h-7" />
+          <span className="text-sm transition-colors duration-150 2xl:text-base">
             {formatTime(recipeInfo.recipe.totalTime)}
           </span>
         </p>
         <div
           onClick={handleSaveRecipe}
-          className="z-[5] cursor-pointer bg-[var(--primary-container)] hover:bg-[var(--badge-btn-hover)] transition-colors duration-150 rounded-full h-7 w-7 flex flex-row justify-center items-center"
+          className="z-[5] flex h-7 w-7 cursor-pointer flex-row items-center justify-center rounded-full bg-[var(--primary-container)] transition-colors duration-150 hover:bg-[var(--badge-btn-hover)]"
         >
           <AnimatePresence>
             {!recipesSaved.filter((recipe) => {
@@ -124,11 +128,11 @@ const MealTabCard = ({ recipeInfo, animKey, finalKey, exit }) => {
               );
             }).length && (
               <motion.div
-                initial={{ scale: 0}}
+                initial={{ scale: 0 }}
                 animate={{ scale: 1, transition: { duration: 0.2 } }}
                 exit={{ scale: 0, transition: { duration: 0 } }}
               >
-                <MdOutlineBookmarkAdd className="2xl:h-7 h-5 w-auto" />
+                <MdOutlineBookmarkAdd className="h-5 w-auto 2xl:h-7" />
               </motion.div>
             )}
           </AnimatePresence>
@@ -140,11 +144,11 @@ const MealTabCard = ({ recipeInfo, animKey, finalKey, exit }) => {
               );
             }).length && (
               <motion.div
-                initial={{ scale: 0}}
+                initial={{ scale: 0 }}
                 animate={{ scale: 1, transition: { duration: 0.2 } }}
                 exit={{ scale: 0, transition: { duration: 0 } }}
               >
-                <MdOutlineBookmark className="2xl:h-7 h-5 w-auto" />
+                <MdOutlineBookmark className="h-5 w-auto 2xl:h-7" />
               </motion.div>
             )}
           </AnimatePresence>

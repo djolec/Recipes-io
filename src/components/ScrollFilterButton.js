@@ -23,17 +23,17 @@ const ScrollFilterButton = ({ setFilterOpen }) => {
   }, []);
 
   return (
-      <div>
-        <button
-          onClick={() => setFilterOpen(true)}
-          className={`bg-[var(--primary-container)] z-30 fixed bottom-36 right-4 text-[var(--text)] transition-colors duration-150 flex flex-row gap-3 items-center rounded-md px-4 py-2 lg:hidden ${
-            isVisible ? "visible" : "hidden"
-          }`}
-        >
-          <MdFilterList />
-          <h1>Filters</h1>
-        </button>
-      </div>
+    <div>
+      <button
+        onClick={() => setFilterOpen(true)}
+        className={`fixed bottom-36 right-4 z-30 flex flex-row items-center gap-3 rounded-md bg-[var(--primary-container)] px-4 py-2 text-[var(--text)] transition-colors duration-150 lg:hidden ${
+          isVisible ? "visible" : "hidden"
+        }`}
+      >
+        <MdFilterList />
+        <h1>Filters</h1>
+      </button>
+    </div>
   );
 };
 

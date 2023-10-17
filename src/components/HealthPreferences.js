@@ -2,9 +2,6 @@ import React from "react";
 import HealthPrefButton from "./HealthPrefButton";
 
 const HealthPreferences = () => {
-
-
-
   const healthPrefs = [
     "Alcohol-Cocktail",
     "Alcohol-Free",
@@ -45,17 +42,17 @@ const HealthPreferences = () => {
   ];
 
   return (
-    <div className="w-full lg:w-[80%] mx-auto mt-8 flex flex-col gap-6">
-      <div className="w-[80%] lg:w-[50%] 2xl:w-[60%] mx-auto flex flex-col gap-1">
-        <h1 className="text-[var(--text)] 2xl:text-6xl font-dm-serif-display text-[26px] lg:text-3xl font-semibold text-center">
+    <div className="mx-auto mt-8 flex w-full flex-col gap-6 lg:w-[80%]">
+      <div className="mx-auto flex w-[80%] flex-col gap-1 lg:w-[50%] 2xl:w-[60%]">
+        <h1 className="text-center font-dm-serif-display text-[26px] font-semibold text-[var(--text)] lg:text-3xl 2xl:text-6xl">
           Choose Your Health Preference
         </h1>
-        <p className="text-[var(--text)] 2xl:w-[80%] 2xl:mx-auto 2xl:text-2xl text-center text-xs lg:text-sm font-dm-sans">
+        <p className="text-center font-dm-sans text-xs text-[var(--text)] lg:text-sm 2xl:mx-auto 2xl:w-[80%] 2xl:text-2xl">
           Choosing your health preference is an important step towards achieving
           a healthier lifestyle.
         </p>
       </div>
-      <div className="flex flex-row gap-2 flex-wrap justify-center">
+      <div className="flex flex-row flex-wrap justify-center gap-2">
         {healthPrefs.map((pref) => {
           return <HealthPrefButton key={pref} pref={pref} />;
         })}

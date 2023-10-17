@@ -8,36 +8,35 @@ import { AppContext } from "../App";
 import { useContext } from "react";
 
 const Header = () => {
-  const { pageSelected, darkMode, setDarkMode } =
-    useContext(AppContext);
+  const { pageSelected, darkMode, setDarkMode } = useContext(AppContext);
 
   return (
-    <header className="font-dm-sans fixed h-16 2xl:h-28 w-full bg-[var(--primary-bg)] transition-color duration-150 z-10 flex flex-row justify-between items-center px-4 lg:px-8 border-b-[1px] border-b-[var(--outline)]">
-      <Link to={"/"} className=" lg:w-56 w-40 2xl:w-72">
+    <header className="transition-color fixed z-10 flex h-16 w-full flex-row items-center justify-between border-b-[1px] border-b-[var(--outline)] bg-[var(--primary-bg)] px-4 font-dm-sans duration-150 lg:px-8 2xl:h-28">
+      <Link to={"/"} className=" w-40 lg:w-56 2xl:w-72">
         <div>
           {darkMode && (
-            <LogoDark className="cursor-pointer w-36 lg:w-40 2xl:w-52 h-auto" />
+            <LogoDark className="h-auto w-36 cursor-pointer lg:w-40 2xl:w-52" />
           )}
           {!darkMode && (
-            <LogoLight className="cursor-pointer w-36 lg:w-40 2xl:w-52 h-auto" />
+            <LogoLight className="h-auto w-36 cursor-pointer lg:w-40 2xl:w-52" />
           )}
         </div>
       </Link>
-      <div className="w-48 h-full hidden lg:flex flex-row justify-center">
-        <Link className="outline-none h-full" to={"/"}>
+      <div className="hidden h-full w-48 flex-row justify-center lg:flex">
+        <Link className="h-full outline-none" to={"/"}>
           <button
-            className={`text-[var(--text)] transition-color 2xl:text-2xl duration-150 h-full w-36 font-semibold hover:bg-[var(--badge-btn-hover)] ${
-              pageSelected === "Home" ? "border-b-orange-600 border-b-2" : null
+            className={`transition-color h-full w-36 font-semibold text-[var(--text)] duration-150 hover:bg-[var(--badge-btn-hover)] 2xl:text-2xl ${
+              pageSelected === "Home" ? "border-b-2 border-b-orange-600" : null
             }`}
           >
             Home
           </button>
         </Link>
-        <Link className="outline-none h-full" to={"/Balanced"}>
+        <Link className="h-full outline-none" to={"/Balanced"}>
           <button
-            className={`text-[var(--text)] 2xl:text-2xl transition-color duration-150 h-full w-32 font-semibold hover:bg-[var(--badge-btn-hover)] ${
+            className={`transition-color h-full w-32 font-semibold text-[var(--text)] duration-150 hover:bg-[var(--badge-btn-hover)] 2xl:text-2xl ${
               pageSelected === "Recipes"
-                ? "border-b-orange-600 border-b-2"
+                ? "border-b-2 border-b-orange-600"
                 : null
             }`}
           >
@@ -45,33 +44,34 @@ const Header = () => {
           </button>
         </Link>
       </div>
-      <div className="w-40 lg:w-56 2xl:w-72 flex flex-row justify-end gap-0 lg:gap-3 items-center">
+      <div className="flex w-40 flex-row items-center justify-end gap-0 lg:w-56 lg:gap-3 2xl:w-72">
         <div
           onClick={() => {
             setDarkMode(!darkMode);
             localStorage.setItem(
               "isDark",
-              JSON.stringify(!JSON.parse(localStorage.getItem("isDark")))
+              JSON.stringify(!JSON.parse(localStorage.getItem("isDark"))),
             );
           }}
-          className="w-11 h-11  flex flex-row justify-center items-center bg-[var(--primary-container)] hover:bg-[var(--badge-btn-hover)] transition-color duration-150 rounded-full "
+          className="transition-color flex  h-11 w-11 flex-row items-center justify-center rounded-full bg-[var(--primary-container)] duration-150 hover:bg-[var(--badge-btn-hover)] "
         >
           {darkMode && (
             <FaRegSun
               style={{ fill: darkMode ? "#ffffff" : "#000000" }}
-              className="w-6 2xl:w-8 h-auto cursor-pointer transition-color duration-150"
+              className="transition-color h-auto w-6 cursor-pointer duration-150 2xl:w-8"
             />
           )}
           {!darkMode && (
             <FaRegMoon
               style={{ fill: darkMode ? "#ffffff" : "#000000" }}
-              className="w-6 2xl:w-8 h-auto py-1 cursor-pointer"
+              className="h-auto w-6 cursor-pointer py-1 2xl:w-8"
             />
           )}
         </div>
         <Link to={"/savedRecipes"}>
-          <button className="text-sm 2xl:text-xl bg-[var(--orange)] hover:bg-[var(--orange-hover)] transition-color duration-150 px-4 py-[10px] whitespace-nowrap rounded-md text-white font-semibold hidden lg:flex flex-row gap-2 items-center justify-center">
-            <LuBookMarked className="h-4 2xl:h-6 w-auto" /> <span>Saved Recipes</span>
+          <button className="transition-color hidden flex-row items-center justify-center gap-2 whitespace-nowrap rounded-md bg-[var(--orange)] px-4 py-[10px] text-sm font-semibold text-white duration-150 hover:bg-[var(--orange-hover)] lg:flex 2xl:text-xl">
+            <LuBookMarked className="h-4 w-auto 2xl:h-6" />{" "}
+            <span>Saved Recipes</span>
           </button>
         </Link>
       </div>

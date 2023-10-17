@@ -104,7 +104,7 @@ const AllRecipes = () => {
     .map((health) =>
       health === "DASH" || health === "Mediterranean"
         ? health
-        : health.toLowerCase()
+        : health.toLowerCase(),
     )
     .map((string) => `&health=${string}`)
     .join("");
@@ -142,13 +142,13 @@ const AllRecipes = () => {
     queryHealth,
     queryMeal,
     queryDish,
-    queryCuisine
+    queryCuisine,
   );
 
   if (isError) {
     return (
       <div className="mt-56 font-dm-sans">
-        <h1 className="text-[var(--text)] text-center w-full text-3xl font-semibold 2xl:text-5xl">
+        <h1 className="w-full text-center text-3xl font-semibold text-[var(--text)] 2xl:text-5xl">
           {error.message}
         </h1>
       </div>
@@ -156,7 +156,7 @@ const AllRecipes = () => {
   }
 
   return (
-    <div className="mt-20 2xl:mt-32 font-dm-sans">
+    <div className="mt-20 font-dm-sans 2xl:mt-32">
       <Filter
         filterOpen={filterOpen}
         setFilterOpen={setFilterOpen}
@@ -165,19 +165,21 @@ const AllRecipes = () => {
         refetch={refetch}
         filterNumber={filterNumber}
       />
-      <div className="w-full h-full lg:pl-[300px] 2xl:pl-[416px] 2xl:pr-4 pl-0  flex flex-col ">
-        <div className="flex flex-row justify-between items-center">
-          <h1 className="text-[var(--text)] text-3xl 2xl:text-5xl">All Recipes</h1>
+      <div className="flex h-full w-full flex-col pl-0 lg:pl-[300px]  2xl:pl-[416px] 2xl:pr-4 ">
+        <div className="flex flex-row items-center justify-between">
+          <h1 className="text-3xl text-[var(--text)] 2xl:text-5xl">
+            All Recipes
+          </h1>
           <button
             onClick={() => setFilterOpen(true)}
-            className="bg-[var(--primary-container)] text-[var(--text)] transition-colors duration-150 flex flex-row gap-3 items-center rounded-md px-4 py-2 lg:hidden"
+            className="flex flex-row items-center gap-3 rounded-md bg-[var(--primary-container)] px-4 py-2 text-[var(--text)] transition-colors duration-150 lg:hidden"
           >
             <MdFilterList />
             <h1>Filters</h1>
           </button>
         </div>
         <ScrollFilterButton setFilterOpen={setFilterOpen} />
-        <ul className=" w-full grid grid-cols-card 2xl:grid-cols-cardBig gap-2 2xl:gap-4 mt-4">
+        <ul className=" mt-4 grid w-full grid-cols-card gap-2 2xl:grid-cols-cardBig 2xl:gap-4">
           {data?.pages[0].data.count !== 0 &&
             data?.pages.map((group, i) => {
               return (
@@ -199,8 +201,8 @@ const AllRecipes = () => {
             {data?.pages[0].data.count === 0 && !isFetching ? (
               <motion.div
                 initial={{ opacity: 0 }}
-                animate= {{ opacity: 1, transition: { duration: 1 } }}
-                className="text-[var(--text)] w-full lg:w-[400px] 2xl:w-[450px] h-40 text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto text-3xl 2xl:text-5xl font-semibold"
+                animate={{ opacity: 1, transition: { duration: 1 } }}
+                className="absolute left-1/2 top-1/2 mx-auto h-40 w-full -translate-x-1/2 -translate-y-1/2 text-center text-3xl font-semibold text-[var(--text)] lg:w-[400px] 2xl:w-[450px] 2xl:text-5xl"
               >
                 <h1>No recipe found. Try applying the filters.</h1>
               </motion.div>

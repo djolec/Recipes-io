@@ -7,11 +7,13 @@ const Hero = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 1 } }}
-      className="w-full font-dm-sans rounded-md min-h-[480px] lg:min-h-[400px] 2xl:min-h-[500px] bg-center bg-mobile-hero lg:bg-hero-img bg-cover flex flex-col justify-center items-center mt-20 2xl:mt-32"
+      className="mt-20 flex min-h-[480px] w-full flex-col items-center justify-center rounded-md bg-mobile-hero bg-cover bg-center font-dm-sans lg:min-h-[400px] lg:bg-hero-img 2xl:mt-32 2xl:min-h-[500px]"
     >
-      <h1 className="text-white text-3xl lg:text-4xl 2xl:text-6xl mb-3 font-dm-serif-display font-semibold">Your desired dish?</h1>
+      <h1 className="mb-3 font-dm-serif-display text-3xl font-semibold text-white lg:text-4xl 2xl:text-6xl">
+        Your desired dish?
+      </h1>
       <SearchRecipe />
-      <h3 className="text-white lg:text-sm text-xs 2xl:text-base mt-3">
+      <h3 className="mt-3 text-xs text-white lg:text-sm 2xl:text-base">
         Search any recipe e.g: burger, pizza, sandwich, toast
       </h3>
     </motion.div>
