@@ -2,8 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 
-const app_id = "0147e6e9";
-const app_key = "093e3ffc7a191b17f18159be10b28878";
+const app_id = process.env.APP_ID;
+const app_key = process.env.APP_KEY;
 const type = "public";
 
 const fetchMealData = (meal) => {
