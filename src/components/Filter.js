@@ -60,10 +60,14 @@ const Filter = ({
         {filterOpen && (
           <>
             <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              exit={{ scaleX: 0 }}
-              transition={{ type: "tween", duration: 0.2 }}
+              {...(isMobileView
+                ? {
+                    initial: { scaleX: 0 },
+                    animate: { scaleX: 1 },
+                    exit: { scaleX: 0 },
+                    transition: { type: "tween", duration: 0.2 },
+                  }
+                : {})}
               className="scrollbar-hide fixed left-0 top-0 z-40 h-full w-full origin-right overflow-y-auto border-r-[1px] border-r-[var(--outline)] bg-[var(--primary-bg)] pb-[180px] font-dm-sans text-base transition-colors duration-150 lg:fixed lg:top-16 lg:w-[300px] lg:text-sm 2xl:top-32 2xl:w-[400px]"
             >
               <div className="flex flex-row items-center justify-between px-4 py-6 lg:py-1">

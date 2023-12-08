@@ -15,7 +15,7 @@ const optionArr = [
 
 const Calories = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { calories, setCalories, darkMode } = useContext(AppContext);
+  const { calories, setCalories } = useContext(AppContext);
 
   const buttonRef = useRef(null);
   const formRef = useRef(null);
